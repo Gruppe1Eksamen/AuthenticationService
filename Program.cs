@@ -6,7 +6,7 @@ using VaultSharp.V1.AuthMethods.Token;
 using VaultSharp.V1.AuthMethods;
 using VaultSharp.V1.Commons;
 
-var EndPoint = Environment.GetEnvironmentVariable("VAULT_ENDPOINT") ?? "not set";
+var EndPoint = Environment.GetEnvironmentVariable("VAULT_ENDPOINT") ?? "https://localhost:8201";
 Console.WriteLine($"VAULT_ENDPOINT: {EndPoint}");
 
 var httpClientHandler = new HttpClientHandler();

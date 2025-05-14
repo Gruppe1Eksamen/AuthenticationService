@@ -32,7 +32,8 @@ namespace AuthService.Controllers
         public async Task<IActionResult> Login([FromBody] LoginModel login)
         {
             // Hent base-URL fra config
-            var userServiceBase = _config["USERSERVICE_ENDPOINT"];
+            var userServiceBase = _config["USERSERVICE_ENDPOINT"] ?? "http://localhost:5077";
+            ;
             // Opbyg request-URL
             var validateUrl = $"{userServiceBase}/user/validatecredentials";
 

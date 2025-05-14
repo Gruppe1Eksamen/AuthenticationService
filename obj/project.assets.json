@@ -790,11 +790,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nicklas/Projects/4Sem/AuthService/AuthService.csproj",
+      "projectUniqueName": "/Users/nicklas/Projects/4Sem/Eksamen/AuthenticationService/AuthenticationService/AuthService.csproj",
       "projectName": "AuthService",
-      "projectPath": "/Users/nicklas/Projects/4Sem/AuthService/AuthService.csproj",
+      "projectPath": "/Users/nicklas/Projects/4Sem/Eksamen/AuthenticationService/AuthenticationService/AuthService.csproj",
       "packagesPath": "/Users/nicklas/.nuget/packages/",
-      "outputPath": "/Users/nicklas/Projects/4Sem/AuthService/obj/",
+      "outputPath": "/Users/nicklas/Projects/4Sem/Eksamen/AuthenticationService/AuthenticationService/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/nicklas/.nuget/NuGet/NuGet.Config"
