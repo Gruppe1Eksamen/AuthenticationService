@@ -55,6 +55,16 @@ services:
       retries: 5
     command: >
       server -dev -dev-root-token-id="00000000-0000-0000-0000-000000000000"
+      
+  vault-init:
+    image: hashicorp/vault:latest
+    command: sh "/app/vault_init.sh"
+    depends_on:
+      - vault_dev
+    healthcheck:
+      retries: 5
+    volumes:
+      - ./vault-init/vault_init.sh:/app/vault_init.sh
 
   mongodb:
     image: mongo:latest
