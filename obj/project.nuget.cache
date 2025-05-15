@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5DR5C6MfEqw=",
+  "dgSpecHash": "vPBSeeUFbPM=",
   "success": true,
   "projectFilePath": "/Users/nicklas/Projects/4Sem/Eksamen/AuthenticationService/AuthenticationService/AuthService.csproj",
   "expectedPackageFiles": [
@@ -13,11 +13,14 @@
     "/Users/nicklas/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/7.1.2/microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
     "/Users/nicklas/.nuget/packages/microsoft.identitymodel.tokens/7.1.2/microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
     "/Users/nicklas/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/nicklas/.nuget/packages/mongodb.bson/3.4.0/mongodb.bson.3.4.0.nupkg.sha512",
     "/Users/nicklas/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/nicklas/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/Users/nicklas/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "/Users/nicklas/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
     "/Users/nicklas/.nuget/packages/system.identitymodel.tokens.jwt/7.1.2/system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
+    "/Users/nicklas/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
+    "/Users/nicklas/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0/system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
     "/Users/nicklas/.nuget/packages/vaultsharp/1.17.5.1/vaultsharp.1.17.5.1.nupkg.sha512"
   ],
   "logs": []

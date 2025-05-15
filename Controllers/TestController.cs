@@ -8,7 +8,7 @@ namespace AuthService.Controllers
     [Route("api/secure")]
     public class SecureController : ControllerBase
     {
-        [Authorize]// Kræver authentication
+        [Authorize]
         [HttpGet("data")]
         public async Task<IActionResult> Get()
         {

@@ -19,12 +19,14 @@ namespace AuthService.Controllers
         private readonly IConfiguration _config;
         private readonly ILogger<AuthController> _logger;
         private readonly HttpClient _httpClient;
+        private readonly string _userServiceBase;
 
         public AuthController(ILogger<AuthController> logger, IConfiguration config, HttpClient httpClient)
         {
             _config = config;
             _logger = logger;
             _httpClient = httpClient;
+            _userServiceBase = _config["USERSERVICE_ENDPOINT"] ?? "http://localhost:5077";
         }
 
         [AllowAnonymous]
@@ -32,10 +34,10 @@ namespace AuthService.Controllers
         public async Task<IActionResult> Login([FromBody] LoginModel login)
         {
             // Hent base-URL fra config
-            var userServiceBase = _config["USERSERVICE_ENDPOINT"] ?? "http://localhost:5077";
-            ;
+            //var userServiceBase = _config["USERSERVICE_ENDPOINT"] ?? "http://localhost:5077";
+            
             // Opbyg request-URL
-            var validateUrl = $"{userServiceBase}/user/validatecredentials";
+            var validateUrl = $"{_userServiceBase}/user/validatecredentials";
 
             _logger.LogInformation("Kalder UserService på {Url}", validateUrl);
             var response = await _httpClient.PostAsJsonAsync(validateUrl, login);
@@ -92,6 +94,13 @@ namespace AuthService.Controllers
                 properties.Add("hosted-at-address", "Could not resolve IP-address");
             }
             return properties;
+        }
+        
+        [Authorize]
+        [HttpGet("authcheck")]
+        public async Task<IActionResult> Get()
+        {
+            return Ok("You're authorized");
         }
     }
 
