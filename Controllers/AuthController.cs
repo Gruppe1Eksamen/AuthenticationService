@@ -33,11 +33,8 @@ namespace AuthService.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel login)
         {
-            // Hent base-URL fra config
-            //var userServiceBase = _config["USERSERVICE_ENDPOINT"] ?? "http://localhost:5077";
-            
             // Opbyg request-URL
-            var validateUrl = $"{_userServiceBase}/user/validatecredentials";
+            var validateUrl = $"{_userServiceBase}/api/users/validatecredentials";
 
             _logger.LogInformation("Kalder UserService på {Url}", validateUrl);
             var response = await _httpClient.PostAsJsonAsync(validateUrl, login);
@@ -47,7 +44,11 @@ namespace AuthService.Controllers
                 if (isValidUser)
                 {
                     var token = GenerateJwtToken(login.Username);
-                    return Ok(new { token });
+                    return Ok(new 
+                    { 
+                        message = "Authorized for 60 minutes",
+                        token, 
+                    });                
                 }
             }
 
@@ -68,7 +69,7 @@ namespace AuthService.Controllers
                 _config["Issuer"],
                 "http://localhost",
                 claims,
-                expires: DateTime.UtcNow.AddMinutes(15),
+                expires: DateTime.UtcNow.AddMinutes(60),
                 signingCredentials: credentials
             );
 
