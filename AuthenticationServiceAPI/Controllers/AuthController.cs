@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using AuthService.Models;
 
 namespace AuthService.Controllers
 {
@@ -33,7 +34,6 @@ namespace AuthService.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel login)
         {
-            // Opbyg request-URL
             var validateUrl = $"{_userServiceBase}/api/users/validatecredentials";
 
             _logger.LogInformation("Kalder UserService på {Url}", validateUrl);
@@ -76,6 +76,7 @@ namespace AuthService.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
         
+        [AllowAnonymous]
         [HttpGet("version")]
         public async Task<Dictionary<string,string>> GetVersion()
         {
@@ -105,9 +106,5 @@ namespace AuthService.Controllers
         }
     }
 
-    public class LoginModel
-    {
-        public string Username { get; set; }
-        public string Password { get; set; }
-    }
+
 }
