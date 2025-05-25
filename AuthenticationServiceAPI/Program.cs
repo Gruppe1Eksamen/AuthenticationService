@@ -8,7 +8,10 @@ using VaultSharp.V1.Commons;
 using NLog;
 using NLog.Web;
 
-var logger = NLogBuilder.ConfigureNLog("NLog.config").GetCurrentClassLogger();
+var logger = LogManager
+    .Setup()
+    .LoadConfigurationFromAppSettings()
+    .GetCurrentClassLogger();
 
 try
 {
