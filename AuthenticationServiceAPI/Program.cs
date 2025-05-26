@@ -11,7 +11,6 @@ using NLog.Web;
 // Setup NLog
 var logger = LogManager
     .Setup()
-    .LoadConfigurationFromFile("NLog.config")
     .GetCurrentClassLogger();
 
 
